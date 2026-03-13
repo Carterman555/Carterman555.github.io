@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Carter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #1e1e24; --surface: #27272f; --card: #2e2e38; --border: #38383f;
+      --text: #eeedf2; --muted: #7e7d8f; --soft: #a09fb5;
+      --accent: #a78bfa; --accent-dim: #2e2845; --accent-glow: rgba(167,139,250,0.12);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Nunito', sans-serif; min-height: 100vh; }
+
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    .nav-links { display: flex; gap: 0.3rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--muted); padding: 0.45rem 1rem; border-radius: 999px; transition: all 0.2s; }
+    .nav-links a:hover { background: var(--card); color: var(--text); }
+    .nav-links a.active { background: var(--card); color: var(--text); }
+
+    .page { max-width: 640px; margin: 0 auto; padding: 5rem 3rem 6rem; }
+
+    .page-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: block; }
+    .page-title { font-family: 'Outfit', sans-serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 1rem; }
+    .page-sub { font-size: 0.92rem; color: var(--muted); line-height: 1.8; margin-bottom: 3rem; }
+
+    /* Contact links */
+    .contact-links { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 3.5rem; }
+    .contact-link {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.2rem 1.6rem;
+      text-decoration: none; color: inherit; transition: all 0.2s;
+    }
+    .contact-link:hover { border-color: var(--accent); transform: translateX(4px); }
+    .contact-link-left { display: flex; align-items: center; gap: 1rem; }
+    .contact-link-icon { font-size: 1.1rem; }
+    .contact-link-label { font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 700; display: block; margin-bottom: 0.1rem; }
+    .contact-link-value { font-size: 0.75rem; color: var(--muted); font-weight: 400; }
+    .contact-link-arrow { font-size: 1rem; color: var(--muted); transition: color 0.2s; }
+    .contact-link:hover .contact-link-arrow { color: var(--accent); }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0 0 2.5rem; }
+
+    .about-section h2 { font-family: 'Outfit', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .about-section p { font-size: 0.88rem; color: var(--soft); line-height: 1.85; }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex; justify-content: space-between; }
+    footer p { font-size: 0.75rem; color: var(--muted); }
+    .footer-dot { color: var(--accent); margin: 0 0.4rem; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .page { animation: fadeUp 0.45s ease forwards; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Home</a>
+  <ul class="nav-links">
+    <li><a href="index.html#selected">Work</a></li>
+    <li><a href="index.html#all">All Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+  <span class="page-eyebrow">Get In Touch</span>
+  <h1 class="page-title">Let's talk.</h1>
+  <p class="page-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feel free to reach out.</p>
+
+  <div class="contact-links">
+    <a href="mailto:carter@example.com" class="contact-link">
+      <div class="contact-link-left">
+        <span class="contact-link-icon">✉️</span>
+        <div>
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-value">carter@example.com</span>
+        </div>
+      </div>
+      <span class="contact-link-arrow">↗</span>
+    </a>
+    <a href="https://github.com/Carterman555" target="_blank" class="contact-link">
+      <div class="contact-link-left">
+        <span class="contact-link-icon">⌥</span>
+        <div>
+          <span class="contact-link-label">GitHub</span>
+          <span class="contact-link-value">github.com/Carterman555</span>
+        </div>
+      </div>
+      <span class="contact-link-arrow">↗</span>
+    </a>
+    <a href="https://linkedin.com" target="_blank" class="contact-link">
+      <div class="contact-link-left">
+        <span class="contact-link-icon">💼</span>
+        <div>
+          <span class="contact-link-label">LinkedIn</span>
+          <span class="contact-link-value">linkedin.com/in/carter</span>
+        </div>
+      </div>
+      <span class="contact-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="about-section">
+    <h2>Response Time</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Carter</p>
+  <p>Built with AI<span class="footer-dot">✦</span>GitHub Pages</p>
+</footer>
+
+</body>
+</html>

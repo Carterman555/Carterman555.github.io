@@ -10,69 +10,132 @@
 
 const projects = [
   {
-    id: "project-alpha",
-    title: "Project Alpha",
-    dateRange: "Jan 2025 – Mar 2025",
-    description: "A web app that automates data pipeline tasks using GPT-4 to interpret natural language commands into executable queries. Built to save hours of repetitive data wrangling.",
-    image: "images/project-alpha.jpg",
-    tags: ["React", "Python", "GPT-4"],
-    aiUse: 3,
-    aiDescription: "Used Claude to scaffold the React frontend components and GPT-4 API integration. The natural language parser logic was almost entirely AI-generated and iterated on through prompting.",
-    tutorialUse: 1,
-    tutorialDescription: "Followed a basic tutorial for setting up the Python FastAPI backend, then diverged significantly from there.",
-    links: {
-      github: "https://github.com",
-      live: "https://example.com"
-    },
-    selected: true
-  },
-  {
-    id: "project-beta",
-    title: "Project Beta",
-    dateRange: "Aug 2024 – Nov 2024",
-    description: "A mobile-first dashboard for tracking habits and goals, with AI-generated weekly insights and natural language goal input. Syncs across devices in real time.",
-    image: "images/project-beta.jpg",
-    tags: ["Swift", "Node.js", "Firebase"],
-    aiUse: 4,
-    aiDescription: "This project was almost entirely AI-built. Used Claude to generate the full Swift UI, Node.js backend, and Firebase integration. Primarily acted as a director and editor rather than a coder.",
-    tutorialUse: 0,
-    tutorialDescription: "",
-    links: {
-      github: "https://github.com",
-      live: ""
-    },
-    selected: true
-  },
-  {
-    id: "project-gamma",
-    title: "Project Gamma",
-    dateRange: "Mar 2024 – Jun 2024",
-    description: "An open-source CLI tool for scaffolding full-stack projects with opinionated, extensible templates. Supports React, Next.js, and Express out of the box.",
-    image: "images/project-gamma.jpg",
-    tags: ["CLI", "TypeScript", "Node.js"],
+    id: "cardcaster",
+    title: "Cardcaster",
+    dateRange: "Jul 2024 - Jun 2025",
+    description: [
+      "Cardcaster is a roguelike where you collect powerful cards that synergize in unique ways. You fight off enemies as you traverse the dungeon.",
+      "Indie game built in Unity/C# (800 hours)."
+    ],
+    details: `## Technical Highlights
+There are other systems I didn't include here.
+
+### Procedural Generation
+- Implemented a room-graph generation system.
+- Preauthored room templates are used to build each level.
+- A rule-based connector (via ScriptableObjects) determines valid room connections.
+- This approach is inspired by [Enter the Gungeon's dungeon generation](https://www.boristhebrave.com/2019/07/28/dungeon-generation-in-enter-the-gungeon/).
+
+### Deck System
+- Implemented a full deck-hand-discard cycle.
+- Supports operations: draw, play, discard, stack, replace, reshuffle.
+- Maintains hand size dynamically in sync with player stats.
+
+### Card Framework
+- The card system uses \`ScriptableObject\` inheritance.
+- Supports multiple card types: ability cards, modifiers, and persistent effects.
+- Modular attributes (damage, duration, cooldown, area, projectile speed).
+- Modifier system applies stat changes and effect prefabs at runtime.
+- Plug-and-play card creation: new cards require no engine changes.
+- Example cards:
+  - **Dagger Shoot:** spawns projectiles with cooldown + applied effects.
+  - **Open Palms:** modifies player hand size dynamically.
+
+## What I'd Improve
+
+Some functions in \`handcard.cs\` are messy. There are various if statements checking the type of card. If I were still working on the game, I would move this logic to the derived card scriptable objects.
+
+The \`CardUIManager\`, \`DeckManager\`, and \`Handcard\` are more closely intertwined than I would like. Better encapsulation between these scripts would make the code clearer.
+
+The card logic contains a lot of inheritance, which complicates the logic. If I were to start over, I would probably use composition instead. This actually didn't make working with the card logic too difficult unlike the enemy logic, which I refactored from inheritance-based to composition-based.`,
+    image: "images/cardcaster_screenshot.png",
+    tags: ["C#", "Unity"],
     aiUse: 1,
-    aiDescription: "Used AI minimally — mainly for boilerplate file generation and writing the README. The core logic was written by hand.",
-    tutorialUse: 2,
-    tutorialDescription: "Followed a tutorial series on building Node.js CLI tools for the argument parsing and file system scaffolding structure.",
+    aiDescription: "Used Chatgpt and Claude to generate Unity tools and a few utility classes.",
+    tutorialUse: 0,
+    tutorialDescription: "",
     links: {
-      github: "https://github.com",
+      github: "https://github.com/Carterman555/cardcaster",
+      live: "https://store.steampowered.com/app/3276950/Cardcaster/"
+    },
+    selected: true
+  },
+  {
+    id: "workout-visualizer",
+    title: "Workout Visualizer",
+    dateRange: "Jul 2025 - Aug 2025",
+    description: [
+      "Workout Visualizer is an app to track, store, and visualize the progress of your workouts. It can also import data from the Strong app."
+    ],
+    image: "images/workout.jpg",
+    tags: ["Python", "Pandas"],
+    aiUse: 1,
+    aiDescription: "I wrote the code myself, then used an LLM to recommend cleaner implementations as I was not too familiar with pandas.",
+    tutorialUse: 0,
+    tutorialDescription: "",
+    links: {
+      github: "https://github.com/Carterman555/workout-visualizer",
+      live: ""
+    },
+    selected: false
+  },
+  {
+    id: "neural-network",
+    title: "Neural Network",
+    dateRange: "Feb 2026 – Mar 2026",
+    description: [
+      "This program implements a basic multilayer perceptron from scratch in python."
+    ],
+    details: `It currently trains it on xor outputs. The neural network can be dynamically sized and trained on any set of data. For learning purposes, I used single values instead of matrices, which makes training less efficient.`,
+    image: "images/neural-net.jpg",
+    tags: ["Python"],
+    aiUse: 0,
+    aiDescription: "No AI was used.",
+    tutorialUse: 2,
+    tutorialDescription: "I followed [this tutorial](https://www.youtube.com/watch?v=VMj-3S1tku0), a couple months prior and created the value class based from memory and thinking it through. I did have to look back at certain parts of the code from the tutorial a couple times to remember how it worked.",
+    links: {
+      github: "https://github.com/Carterman555/neural_net",
       live: ""
     },
     selected: true
   },
   {
-    id: "project-delta",
-    title: "Project Delta",
-    dateRange: "Oct 2023 – Jan 2024",
-    description: "A browser extension that summarizes any article or webpage into bullet points using a local LLM. Works offline with no data sent to external servers.",
-    image: "images/project-delta.jpg",
-    tags: ["JavaScript", "Browser Extension", "Ollama"],
-    aiUse: 2,
-    aiDescription: "Used AI to write the content-script injection logic and the Ollama API wrapper. The extension manifest and popup UI were hand-coded.",
+    id: "ai-asteroids",
+    title: "AI Asteroids",
+    dateRange: "Dec 2025",
+    description: [
+      "AI Asteroids uses [NEAT](https://neat-python.readthedocs.io/en/latest/index.html) to learn to play the game Asteroids.",
+      "This program allows the user to play or train the AI.",
+      "It displays the neural network structure using graphviz."
+    ],
+    image: "images/asteroids.jpg",
+    tags: ["Python", "NEAT"],
+    aiUse: 1,
+    aiDescription: "Minimal AI was used.",
+    tutorialUse: 1,
+    tutorialDescription: "The base game of Asteroids was created following a project tutorial on [boot.dev](https://www.boot.dev/).",
+    links: {
+      github: "https://github.com/Carterman555/ai_asteroids",
+      live: ""
+    },
+    selected: true
+  },
+  {
+    id: "blokus",
+    title: "Blokus",
+    dateRange: "Dec 2025",
+    description: [
+      "Play Blokus with four players.",
+      "Automatically detects where players can place pieces, skips players who cannot go, and determines when the game is over."
+    ],
+    image: "images/blokus.jpg",
+    tags: ["Python"],
+    aiUse: 1,
+    aiDescription: "Minimal AI was used.",
     tutorialUse: 0,
     tutorialDescription: "",
     links: {
-      github: "https://github.com",
+      github: "https://github.com/Carterman555/blokus",
       live: ""
     },
     selected: false
