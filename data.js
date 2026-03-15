@@ -92,7 +92,7 @@ The card logic contains a lot of inheritance, which complicates the logic. If I 
     aiUse: 0,
     aiDescription: "No AI was used.",
     tutorialUse: 2,
-    tutorialDescription: "I followed [this tutorial](https://www.youtube.com/watch?v=VMj-3S1tku0), a couple months prior and created the value class based from memory and thinking it through. I did have to look back at certain parts of the code from the tutorial a couple times to remember how it worked.",
+    tutorialDescription: "I followed [this tutorial](https://www.youtube.com/watch?v=VMj-3S1tku0) a couple months prior and created the value class based from memory and thinking it through. I did have to look back at certain parts of the code from the tutorial a couple times to remember how it worked.",
     links: {
       github: "https://github.com/Carterman555/neural_net",
       live: ""
@@ -137,6 +137,39 @@ The card logic contains a lot of inheritance, which complicates the logic. If I 
     links: {
       github: "https://github.com/Carterman555/blokus",
       live: ""
+    },
+    selected: false
+  },
+  {
+    id: "island-survivors",
+    title: "Island Survivors",
+    dateRange: "Jun 2024",
+    description: [
+      "In Island Survivors, you collect resources to build defenses to protect your keep from waves of enemies.",
+      "Game built in Unity/C# during a two-week game jam."
+    ],
+    details: `## Technical Highlights
+
+### Enemy AI
+- There are 7 enemies with different behaviors.
+- Uses an inheritance-based state machine.
+
+### Buildings
+- There are 6 unique building.
+- Buildings can be built on a 1D grid and require resources.
+
+### Resource collection
+- Plants, rocks, and trees spawn randomly on the island.
+- They can be harvested and they're resources can be use to create buildings.`,
+    image: "images/island_survivors.jpg",
+    tags: ["C#", "Unity"],
+    aiUse: 1,
+    aiDescription: "Minimal AI was used.",
+    tutorialUse: 0,
+    tutorialDescription: "",
+    links: {
+      github: "https://github.com/Carterman555/island-survivors",
+      live: "https://taco-snake-games.itch.io/island-survivors"
     },
     selected: false
   }

@@ -72,15 +72,15 @@
 <main class="page">
   <span class="page-eyebrow">Get In Touch</span>
   <h1 class="page-title">Let's talk.</h1>
-  <p class="page-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feel free to reach out.</p>
+  <p class="page-sub">I'm open to opportunities such as jobs and internships. Feel free to reach out.</p>
 
   <div class="contact-links">
-    <a href="mailto:carter@example.com" class="contact-link">
+    <a id="email-link" href="#" class="contact-link">
       <div class="contact-link-left">
         <span class="contact-link-icon">✉️</span>
         <div>
           <span class="contact-link-label">Email</span>
-          <span class="contact-link-value">carter@example.com</span>
+          <span class="contact-link-value" id="email-display"></span>
         </div>
       </div>
       <span class="contact-link-arrow">↗</span>
@@ -95,12 +95,12 @@
       </div>
       <span class="contact-link-arrow">↗</span>
     </a>
-    <a href="https://linkedin.com" target="_blank" class="contact-link">
+    <a href="https://www.linkedin.com/in/carterhart555/" target="_blank" class="contact-link">
       <div class="contact-link-left">
         <span class="contact-link-icon">💼</span>
         <div>
           <span class="contact-link-label">LinkedIn</span>
-          <span class="contact-link-value">linkedin.com/in/carter</span>
+          <span class="contact-link-value">linkedin.com/in/carterhart555</span>
         </div>
       </div>
       <span class="contact-link-arrow">↗</span>
@@ -111,7 +111,7 @@
 
   <div class="about-section">
     <h2>Response Time</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>I will try to respond within two business days.</p>
   </div>
 
 </main>
@@ -121,5 +121,15 @@
   <p>Built with AI<span class="footer-dot">✦</span>GitHub Pages</p>
 </footer>
 
+<script>
+  (function() {
+    var u = '25chart555';
+    var d = 'gmail.com';
+    var e = u + '@' + d;
+    var link = document.getElementById('email-link');
+    link.href = 'mailto:' + e;
+    document.getElementById('email-display').textContent = e;
+  })();
+</script>
 </body>
 </html>
